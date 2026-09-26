@@ -10,7 +10,7 @@ FPS = 60
 async def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Πιάσε το νόμισμα")
+    pygame.display.set_caption("Catch The Coin!")
     clock = pygame.time.Clock()
 
     # ΒΗΜΑ 1 — ο παίκτης: ένα ορθογώνιο (x, y, πλάτος, ύψος)
@@ -39,6 +39,7 @@ async def main():
             player.y -= speed
         if keys[pygame.K_DOWN]:
             player.y += speed
+            player.clamp_ip(screen.get_rect())
 
 
         # 3) ΖΩΓΡΑΦΙΚΗ
