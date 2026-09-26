@@ -41,6 +41,7 @@ async def main():
             player.y += speed
         player.clamp_ip(screen.get_rect())
 
+        coin_rect = pygame.Rect(coin_x = 15, coin_y = 15,)
 
         # 3) ΖΩΓΡΑΦΙΚΗ
         screen.fill((15, 40, 60))
