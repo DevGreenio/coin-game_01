@@ -16,10 +16,13 @@ async def main():
     # ΒΗΜΑ 1 — ο παίκτης: ένα ορθογώνιο (x, y, πλάτος, ύψος)
     player = pygame.Rect(380, 280, 40, 40)
     speed = 5
+    score=0
 
     # ΒΗΜΑ 3 — το νόμισμα: σε τυχαία θέση
     coin_x = random.randint(20, WIDTH - 20)
     coin_y = random.randint(20, HEIGHT - 20)
+
+    font = pygame.font.Font("arial", 48)
 
     running = True
     while running:
@@ -41,15 +44,20 @@ async def main():
             player.y += speed
         player.clamp_ip(screen.get_rect())
 
+
         coin_rect = pygame.Rect(coin_x - 15, coin_y - 15, 30, 30)
         if player.colliderect(coin_rect):
             coin_x=random.randint(20, WIDTH - 20)
             coin_y=random.randint(20, HEIGHT - 20)
+            score+=1
 
         # 3) ΖΩΓΡΑΦΙΚΗ
         screen.fill((15, 40, 60))
         pygame.draw.rect(screen, (80, 200, 120), player)
         pygame.draw.circle(screen, (255, 209, 102), (coin_x, coin_y), 15)
+
+        text = font.render(f"Score: {score}, True, (255, 255, 255)")
+        screen.blt(text, (20, 20))
         
         pygame.display.flip()
 
