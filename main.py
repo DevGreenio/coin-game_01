@@ -1,6 +1,9 @@
 import asyncio
 import random
 import pygame  # noqa: F401 — ΜΗΝ το σβήσεις: το pygbag διαβάζει ΜΟΝΟ αυτό το αρχείο για imports
+import time
+
+random.seed(time.time_ns())
 
 # ---------------- Ρυθμίσεις ----------------
 WIDTH, HEIGHT = 800, 600
@@ -57,7 +60,7 @@ async def main():
         pygame.draw.rect(screen, (80, 200, 120), player)
         pygame.draw.circle(screen, (255, 209, 102), (coin_x, coin_y), 15)
 
-        text = font.render(f"Score: {score}, True, (255, 255, 255)")
+        text = font.render(f"Score: {score}", True, (255, 255, 255))
         screen.blt(text, (20, 20))
         
         pygame.display.flip()
