@@ -61,7 +61,7 @@ async def main():
         pygame.draw.circle(screen, (255, 209, 102), (coin_x, coin_y), 15)
 
         text = font.render(f"Score: {score}", True, (255, 255, 255))
-        screen.blt(text, (20, 20))
+        screen.blit(text, (20, 20))
         
         pygame.display.flip()
 
