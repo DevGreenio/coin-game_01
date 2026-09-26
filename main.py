@@ -16,12 +16,13 @@ async def main():
     # ΒΗΜΑ 1 — ο παίκτης: ένα ορθογώνιο (x, y, πλάτος, ύψος)
     player = pygame.Rect(380, 280, 40, 40)
     speed = 5
-    score=0
+    
 
     # ΒΗΜΑ 3 — το νόμισμα: σε τυχαία θέση
     coin_x = random.randint(20, WIDTH - 20)
     coin_y = random.randint(20, HEIGHT - 20)
 
+    score=0
     font = pygame.font.Font(None, 48)
 
     running = True
