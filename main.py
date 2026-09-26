@@ -22,7 +22,7 @@ async def main():
     coin_x = random.randint(20, WIDTH - 20)
     coin_y = random.randint(20, HEIGHT - 20)
 
-    font = pygame.font.Font(None, 48)
+    font = pygame.font.Font("arial", 48)
 
     running = True
     while running:
