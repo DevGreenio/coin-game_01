@@ -88,7 +88,7 @@ async def main():
         text = font.render(f"Score: {score}", True, (255, 255, 255))
         screen.blit(text, (20, 20))
         text1 = font.render(f"Time: {time_left}", True, (255, 255, 255))
-        screen.blit(text1, (-20, -20))
+        screen.blit(text1, (20, 40))
         
         pygame.display.flip()
 
