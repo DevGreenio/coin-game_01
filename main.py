@@ -64,7 +64,8 @@ async def main():
             enemy_speed = enemy_speed * -1 
 
         if enemy.colliderect(player):
-            score-=1
+            if score > 0:
+                score-=1
 
         
 
