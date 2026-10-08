@@ -65,7 +65,7 @@ async def main():
             if score%3==0:
                 enemy_speed+=1
 
-        enemy.x+=enemy_speed
+        
         if enemy.left <= 0 or enemy.right >= WIDTH:
             enemy_dir*=-1
         enemy.x=enemy.x+enemy_speed*enemy_dir
