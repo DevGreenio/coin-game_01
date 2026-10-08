@@ -25,6 +25,7 @@ async def main():
     enemy_y=random.randint(25, HEIGHT -25)
     enemy = pygame.Rect(enemy_x,enemy_y,50,50)
     enemy_speed = 4
+    enemy_dir=1
 
     # ΒΗΜΑ 3 — το νόμισμα: σε τυχαία θέση
     coin_x = random.randint(20, WIDTH - 20)
@@ -66,15 +67,16 @@ async def main():
 
         enemy.x+=enemy_speed
         if enemy.left <= 0 or enemy.right >= WIDTH:
-            enemy_speed = enemy_speed * -1 
-
+            enemy_dir*=-1
+        enemy.x=enemy.x+enemy_speed*enemy_dir
+        
         if enemy.colliderect(player):
             if score > 0:
                 score-=1
 
         elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
         time_left=GAME_TIME - elapsed_time
-
+        
         
 
         # 3) ΖΩΓΡΑΦΙΚΗ
