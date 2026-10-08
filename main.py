@@ -7,7 +7,8 @@ random.seed(time.time_ns())
 
 # ---------------- Ρυθμίσεις ----------------
 WIDTH, HEIGHT = 800, 600
-FPS = 60
+FPS = 180
+GAME_TIME = 45
 
 
 async def main():
@@ -72,7 +73,7 @@ async def main():
                 score-=1
 
         elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
-        
+        time_left=GAME_TIME - elapsed_time
 
         
 
@@ -86,6 +87,8 @@ async def main():
 
         text = font.render(f"Score: {score}", True, (255, 255, 255))
         screen.blit(text, (20, 20))
+        text1 = font.render(f"Time: {time_left}", True, (255, 255, 255))
+        screen.blit(text1, (-20, -20))
         
         pygame.display.flip()
 
