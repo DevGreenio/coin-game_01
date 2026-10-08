@@ -67,6 +67,9 @@ async def main():
             if score > 0:
                 score-=1
 
+        if score%3 == 0:
+            enemy_speed+=0.1
+
         
 
         # 3) ΖΩΓΡΑΦΙΚΗ
