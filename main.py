@@ -58,6 +58,8 @@ async def main():
             coin_x=random.randint(20, WIDTH - 20)
             coin_y=random.randint(20, HEIGHT - 20)
             score+=1
+            if score%3==0:
+                enemy_speed+=1
 
         enemy.x+=enemy_speed
         if enemy.left <= 0 or enemy.right >= WIDTH:
@@ -67,8 +69,7 @@ async def main():
             if score > 0:
                 score-=1
 
-        if score%3 == 0 and score!=0:
-            enemy_speed+=100000
+        
 
         
 
