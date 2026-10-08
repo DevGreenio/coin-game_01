@@ -32,6 +32,8 @@ async def main():
     score=0
     font = pygame.font.Font(None, 48)
 
+    start_time=pygame.time.get_ticks()
+
     running = True
     while running:
         # 1) ΓΕΓΟΝΟΤΑ
@@ -69,6 +71,7 @@ async def main():
             if score > 0:
                 score-=1
 
+        elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
         
 
         
