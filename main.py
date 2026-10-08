@@ -68,7 +68,7 @@ async def main():
                 score-=1
 
         if score%3 == 0 and score!=0:
-            enemy_speed+=1
+            enemy_speed+=100000
 
         
 
