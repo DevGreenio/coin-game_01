@@ -9,6 +9,7 @@ random.seed(time.time_ns())
 WIDTH, HEIGHT = 800, 600
 FPS = 180
 GAME_TIME = 45
+TARGET=30
 
 
 async def main():
@@ -81,9 +82,15 @@ async def main():
             elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
             time_left=GAME_TIME - elapsed_time
 
-            if time_left <=0:
+            if time_left <=0 and score<TARGET:
                 game_over = True
                 won=False
+
+            if score >= TARGET:
+                game_over=True
+                won=True
+
+
         
         
 
