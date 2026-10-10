@@ -110,7 +110,7 @@ async def main():
             restart_text = font.render("Press R to retry", True, (255,255,255))
 
             screen.blit(end_text, (WIDTH // 2 - end_text.width // 2, HEIGHT // 2-40))
-            screen.blit(restart_text, (HEIGHT // 2 - restart_text.width // 2, HEIGHT // 2 + 40))
+            screen.blit(restart_text, (WIDTH // 2 - restart_text.width // 2, HEIGHT // 2 + 40))
         pygame.display.flip()
 
         clock.tick(FPS)
