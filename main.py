@@ -76,6 +76,7 @@ async def main():
             
             if enemy.colliderect(player):
                 game_over=True
+                won=False
 
             elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
             time_left=GAME_TIME - elapsed_time
