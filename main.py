@@ -80,6 +80,10 @@ async def main():
 
             elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
             time_left=GAME_TIME - elapsed_time
+
+            if time_left <=0:
+                game_over = True
+                won=False
         
         
 
@@ -95,6 +99,14 @@ async def main():
         screen.blit(text, (20, 20))
         text1 = font.render(f"Time: {time_left}", True, (255, 255, 255))
         screen.blit(text1, (550, 20))
+
+        if game_over:
+            if won:
+                msg = "You Win"
+            else:
+                msg= "You Lose"
+
+            end_text = font.render(msg, True, (150, 16, 2))
         
         pygame.display.flip()
 
