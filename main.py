@@ -86,7 +86,7 @@ async def main():
                 game_over = True
                 won=False
 
-            if score >= TARGET:
+            if time_left <=0 and score >= TARGET:
                 game_over=True
                 won=True
 
