@@ -36,6 +36,8 @@ async def main():
 
     start_time=pygame.time.get_ticks()
 
+    won=False
+
     running = True
     game_over=False
     while running:
