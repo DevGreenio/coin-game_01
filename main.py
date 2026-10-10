@@ -106,7 +106,8 @@ async def main():
             else:
                 msg= "You Lose"
 
-            end_text = font.render(msg, True, (150, 16, 2))
+            end_text = font.render(msg, True, (255, 255, 255))
+            restart_text = font.render("Press R to retry", True, (255,255,255))
         
         pygame.display.flip()
 
