@@ -108,6 +108,8 @@ async def main():
 
             end_text = font.render(msg, True, (255, 255, 255))
             restart_text = font.render("Press R to retry", True, (255,255,255))
+
+            screen.blit(end_text, (WIDTH // 2 - end_text.width // 2, HEIGHT // 2- end_text.width // 2))
         
         pygame.display.flip()
 
