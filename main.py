@@ -8,8 +8,8 @@ random.seed(time.time_ns())
 # ---------------- Ρυθμίσεις ----------------
 WIDTH, HEIGHT = 800, 600
 FPS = 180
-GAME_TIME = 45
-TARGET=30
+GAME_TIME = 60
+TARGET=50
 
 
 async def main():
@@ -32,11 +32,35 @@ async def main():
     coin_x = random.randint(20, WIDTH - 20)
     coin_y = random.randint(20, HEIGHT - 20)
 
+    coin_type=random.randint(1,10)
+
+    if coin_type <=6:
+        coin_color=(255, 209, 102) #yellow
+        coin_value=1 #score + 1
+    elif coin_type <= 9:
+        coin_color=(70,150,255) # blue
+        coin_value = 3 #score +3
+    elif coin_type  == 10:
+        coin_color = (192,100,255) #purp
+        coin_value = 5 #score + 5
+
+
+
     score=0
     font = pygame.font.Font(None, 48)
     small_font=pygame.font.Font(None ,36)
+    coin_font = pygame.font.Font(None, 24)
 
     start_time=pygame.time.get_ticks()
+    if coin_type <=6:
+        coin_color=(255, 209, 102) #yellow
+        coin_value=1 #score + 1
+    elif coin_type <= 9:
+        coin_color=(70,150,255) # blue
+        coin_value = 3 #score +3
+    elif coin_type  == 10:
+        coin_color = (192,100,255) #purp
+        coin_value = 5 #score + 5
 
     won=False
 
@@ -56,9 +80,11 @@ async def main():
                 enemy_speed = 4
                 score=0
                 start_time = pygame.time.get_ticks()
+                
+                
                 game_over=False
                 won=False
-
+                
 
 
 
@@ -81,7 +107,17 @@ async def main():
             if player.colliderect(coin_rect):
                 coin_x=random.randint(20, WIDTH - 20)
                 coin_y=random.randint(20, HEIGHT - 20)
-                score+=1
+                score+=coin_value
+                coin_type = random.randint(1,10)
+                if coin_type <=6:
+                    coin_color=(255, 209, 102) #yellow
+                    coin_value=1 #score + 1
+                elif coin_type <= 9:
+                    coin_color=(70,150,255) # blue
+                    coin_value = 3 #score +3
+                elif coin_type  == 10:
+                    coin_color = (192,100,255) #purp
+                    coin_value = 5 #score + 5
                 if score%3==0:
                     enemy_speed+=1
 
@@ -112,7 +148,10 @@ async def main():
         # 3) ΖΩΓΡΑΦΙΚΗ
         screen.fill((15, 40, 60))
         pygame.draw.rect(screen, (80, 200, 120), player)
-        pygame.draw.circle(screen, (255, 209, 102), (coin_x, coin_y), 15)
+        pygame.draw.circle(screen, (coin_color), (coin_x, coin_y), 15)
+
+        value_text=coin_font.render(str(coin_value), True, (0,0,0))
+        screen.blit(value_text, (coin_x - value_text.get_width()//2,coin_y - value_text.get_height()//2))
 
         pygame.draw.rect(screen,(220, 70, 70), enemy)
 
