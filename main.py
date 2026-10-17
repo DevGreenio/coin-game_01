@@ -9,7 +9,7 @@ random.seed(time.time_ns())
 WIDTH, HEIGHT = 800, 600
 FPS = 180
 GAME_TIME = 60
-TARGET=50
+TARGET=70
 
 
 async def main():
