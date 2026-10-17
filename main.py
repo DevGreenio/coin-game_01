@@ -121,6 +121,8 @@ async def main():
         screen.blit(text, (20, 20))
         text1 = font.render(f"Time: {time_left}", True, (255, 255, 255))
         screen.blit(text1, (550, 20))
+        txtfps = font.render(f"FPS: {FPS}", True, (255, 255, 255))
+        screen.blit(txtfps, (20, 50))
 
         if game_over:
             if won:
