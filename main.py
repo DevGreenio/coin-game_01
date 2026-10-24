@@ -190,7 +190,7 @@ async def main():
         txtfps = font.render(f"FPS: {FPS}", True, (255, 255, 255))
         screen.blit(txtfps, (20, 50))
         life_text=font.render(f"Lives: {lives}", True, (255,255,255))
-        screen.blit(life_text, (60,50))
+        screen.blit(life_text, (-20,50))
 
         if game_over:
             if won:
