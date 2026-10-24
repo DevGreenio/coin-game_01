@@ -138,14 +138,16 @@ async def main():
 
             
             
-            if current_time - last_hit_time >= HIT_COOLDOWN:
-                lives -=1
-                last_hit_time=current_time
-                player.x=380
-                player.y=280
-                if lives<=0:
-                    game_over=True
-                    won=False
+                if current_time - last_hit_time >= HIT_COOLDOWN:
+                    lives -=1
+                    last_hit_time=current_time
+                
+                    player.x=380
+                    player.y=280
+                
+                    if lives<=0:
+                        game_over=True
+                        won=False
 
 
             
