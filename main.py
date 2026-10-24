@@ -10,6 +10,9 @@ WIDTH, HEIGHT = 800, 600
 FPS = 180
 GAME_TIME = 60
 TARGET=70
+STARTING_LIVES = 3
+HIT_COOLDOWN=1200 #milliseconds 1200==1,2 sec
+
 
 
 async def main():
@@ -21,6 +24,8 @@ async def main():
     # ΒΗΜΑ 1 — ο παίκτης: ένα ορθογώνιο (x, y, πλάτος, ύψος)
     player = pygame.Rect(380, 280, 40, 40)
     speed = 5
+    lives=STARTING_LIVES
+    last_hit_time= -HIT_COOLDOWN
 
     enemy_x= 100
     enemy_y=150
@@ -124,13 +129,35 @@ async def main():
             if enemy.left <= 0 or enemy.right >= WIDTH:
                 enemy_dir*=-1
             enemy.x=enemy.x+enemy_speed*enemy_dir
+
+            current_time=pygame.time.get_ticks()
             
             if enemy.colliderect(player):
                 game_over=True
                 won=False
 
+            
+            
+            if current_time - last_hit_time >= HIT_COOLDOWN:
+                lives -=1
+                last_hit_time=current_time
+                player.x=380
+                player.y=280
+                if lives<=0:
+                    game_over=True
+                    won=False
+
+
+            
+            
+            
             elapsed_time=(pygame.time.get_ticks()-start_time) // 1_000
             time_left=GAME_TIME - elapsed_time
+
+
+            
+
+
 
             if time_left <=0 and score<TARGET:
                 game_over = True
