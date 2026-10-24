@@ -84,6 +84,7 @@ async def main():
                 enemy_speed = 4
                 score=0
                 start_time = pygame.time.get_ticks()
+                lives=STARTING_LIVES
                 
                 
                 game_over=False
