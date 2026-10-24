@@ -50,7 +50,8 @@ async def main():
     font = pygame.font.Font(None, 48)
     small_font=pygame.font.Font(None ,36)
     coin_font = pygame.font.Font(None, 24)
-
+    coin_x=random.randint(20, WIDTH - 20)
+    coin_y=random.randint(20, HEIGHT - 20)
     start_time=pygame.time.get_ticks()
     if coin_type <=6:
         coin_color=(255, 209, 102) #yellow
@@ -105,8 +106,7 @@ async def main():
 
             coin_rect = pygame.Rect(coin_x - 15, coin_y - 15, 30, 30)
             if player.colliderect(coin_rect):
-                coin_x=random.randint(20, WIDTH - 20)
-                coin_y=random.randint(20, HEIGHT - 20)
+                
                 score+=coin_value
                 coin_type = random.randint(1,10)
                 if coin_type <=6:
