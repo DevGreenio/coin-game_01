@@ -133,8 +133,6 @@ async def main():
             current_time=pygame.time.get_ticks()
             
             if enemy.colliderect(player):
-                game_over=True
-                won=False
 
             
             
