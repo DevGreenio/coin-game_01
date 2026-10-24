@@ -50,6 +50,7 @@ async def main():
     font = pygame.font.Font(None, 48)
     small_font=pygame.font.Font(None ,36)
     coin_font = pygame.font.Font(None, 24)
+
     start_time=pygame.time.get_ticks()
     if coin_type <=6:
         coin_color=(255, 209, 102) #yellow
@@ -60,7 +61,6 @@ async def main():
     elif coin_type  == 10:
         coin_color = (192,100,255) #purp
         coin_value = 5 #score + 5
-
     won=False
 
     running = True
