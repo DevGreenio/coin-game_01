@@ -18,6 +18,13 @@ HIT_COOLDOWN=1200 #milliseconds 1200==1,2 sec
 async def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+    #Loading Graphics
+    player_img=pygame.image.load("images/player.png").convert_alpha()
+    player_img=pygame.transform.scale(player_img, (40,40))
+
+
+
     pygame.display.set_caption("Coiner")
     clock = pygame.time.Clock()
 
@@ -174,7 +181,10 @@ async def main():
 
         # 3) ΖΩΓΡΑΦΙΚΗ
         screen.fill((15, 40, 60))
-        pygame.draw.rect(screen, (80, 200, 120), player)
+        
+        screen.blit(player_img, player) #player
+        
+        
         pygame.draw.circle(screen, (coin_color), (coin_x, coin_y), 15)
 
         value_text=coin_font.render(str(coin_value), True, (0,0,0))
