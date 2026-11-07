@@ -186,8 +186,14 @@ async def main():
         screen.blit(player_img, player) #player
         
         
-        pygame.draw.circle(screen, (coin_color), (coin_x, coin_y), 15)
-
+        if coin_value == 1:
+            coin_img = yellow_coin_img
+        elif: coin_value==3:
+            coin_img=blue_coin_img
+        else:
+            coin_img=purple_coin_img
+        
+        screen.blit(coin_img, (coin_x - 15, coin_y - 15))
         value_text=coin_font.render(str(coin_value), True, (0,0,0))
         screen.blit(value_text, (coin_x - value_text.get_width()//2,coin_y - value_text.get_height()//2))
 
