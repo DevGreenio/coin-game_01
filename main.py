@@ -188,7 +188,7 @@ async def main():
         
         if coin_value == 1:
             coin_img = yellow_coin_img
-        elif: coin_value==3:
+        elif coin_value==3:
             coin_img=blue_coin_img
         else:
             coin_img=purple_coin_img
