@@ -194,8 +194,8 @@ async def main():
             coin_img=purple_coin_img
         
         screen.blit(coin_img, (coin_x - 15, coin_y - 15))
-        value_text=coin_font.render(str(coin_value), True, (0,0,0))
-        screen.blit(value_text, (coin_x - value_text.get_width()//2,coin_y - value_text.get_height()//2))
+        #value_text=coin_font.render(str(coin_value), True, (0,0,0))
+        #screen.blit(value_text, (coin_x - value_text.get_width()//2,coin_y - value_text.get_height()//2))
 
         screen.blit(enemy_img,enemy) #enemy
 
