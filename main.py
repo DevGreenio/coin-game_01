@@ -26,7 +26,14 @@ async def main():
     enemy_img=pygame.image.load("images/enemy.png").convert_alpha()
     enemy_img=pygame.transform.scale(enemy_img, (50,50))
 
-
+    yellow_coin_img=pygame.image.load("images/coin_yellow.png").convert_alpha()
+    yellow_coin_img=pygame.transform.scale(yellow_coin_img, (30,30))
+    blue_coin_img=pygame.image.load("images/coin_blue.png").convert_alpha()
+    blue_coin_img=pygame.transform.scale(blue_coin_img, (30,30))
+    purple_coin_img=pygame.image.load("images/coin_purple.png").convert_alpha()
+    purple_coin_img=pygame.transform.scale(purple_coin_img, (30,30))
+    
+    
     pygame.display.set_caption("Coiner")
     clock = pygame.time.Clock()
 
@@ -66,15 +73,7 @@ async def main():
     coin_font = pygame.font.Font(None, 24)
 
     start_time=pygame.time.get_ticks()
-    if coin_type <=6:
-        coin_color=(255, 209, 102) #yellow
-        coin_value=1 #score + 1
-    elif coin_type <= 9:
-        coin_color=(70,150,255) # blue
-        coin_value = 3 #score +3
-    elif coin_type  == 10:
-        coin_color = (192,100,255) #purp
-        coin_value = 5 #score + 5
+    
     won=False
 
     running = True
