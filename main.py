@@ -8,7 +8,7 @@ random.seed(time.time_ns())
 # ---------------- Ρυθμίσεις ----------------
 WIDTH, HEIGHT = 800, 600
 FPS = 180
-GAME_TIME = 60
+GAME_TIME = 65
 TARGET=70
 STARTING_LIVES = 3
 HIT_COOLDOWN=1200 #milliseconds 1200==1,2 sec
