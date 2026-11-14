@@ -115,7 +115,7 @@ async def main():
         # ΒΗΜΑ 2 — κίνηση με τα βελάκια
         if not game_over:
             keys = pygame.key.get_pressed()
-            moving=(keys[pygame.K_LEFT] or keys[pygame.K_RIGHT] or keys[pygame.K_UP] or keys[pygame.DOWN])
+            moving=(keys[pygame.K_LEFT] or keys[pygame.K_RIGHT] or keys[pygame.K_UP] or keys[pygame.K_DOWN])
 
            
             if keys[pygame.K_LEFT]:
