@@ -24,9 +24,18 @@ async def main():
 
     for i in range(2):
         img = pygame.image.load(f"images/player_{i}.png").convert_alpha()
-        imge=pygame.transform.scale(img, (40,40))
+        img=pygame.transform.scale(img, (40,40))
         player_frames.append(img)
 
+    enemy_frames=[]
+
+    for i in range(2):
+        img=pygame.image.load(f"images/enemy_{i}.png").convert_alpha()
+        img=pygame.transform.scale(img,(50,50) )
+        enemy_frames.append(img)
+
+
+    
 
     enemy_img=pygame.image.load("images/enemy.png").convert_alpha()
     enemy_img=pygame.transform.scale(enemy_img, (50,50))
@@ -217,7 +226,8 @@ async def main():
         #value_text=coin_font.render(str(coin_value), True, (0,0,0))
         #screen.blit(value_text, (coin_x - value_text.get_width()//2,coin_y - value_text.get_height()//2))
 
-        screen.blit(enemy_img,enemy) #enemy
+        enemy_frame=(pygame.time.get_ticks() // 200) % len(enemy_frames) #enemy
+        screen.blit(enemy_frames[enemy_frame], enemy)
 
 
         text = font.render(f"Score: {score}", True, (255, 255, 255))
